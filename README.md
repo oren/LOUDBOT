@@ -15,7 +15,7 @@ loud = require('loudbot');
 loud();
 
 // Output: GUYS I TRIED TO USE A MULTITHREADED REGEXP TO PARSE HTML BUT IT DIDN'T WORK: HELP???
-```js
+```
 
 `LOUD_CONFIG` is an environment variable with the relative path to the config file. The file should look like:
 
@@ -51,4 +51,3 @@ var loud = require('loudbot');
 
     export LOUD_CONFIG=config.js
     npm test
-
