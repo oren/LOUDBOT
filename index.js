@@ -37,7 +37,7 @@ var options = {
 
 module.exports = function(cb) {
   var index = Math.floor(Math.random() * 99);
-  var reply = '';
+  var tweet = '';
 
   T.get('/statuses/user_timeline', options, function(err, reply) {
     if (err) {
@@ -45,8 +45,8 @@ module.exports = function(cb) {
       return console.error(err);
     };
 
-    reply = reply[index].text.replace(/^@[\S]+ /, '');
-    if (cb) { return cb(null, reply) };
-    return console.log(reply);
+    tweet = reply[index].text.replace(/^@[\S]+ /, '');
+    if (cb) { return cb(null, tweet) };
+    return console.log(tweet);
   });
 };
