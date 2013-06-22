@@ -3,7 +3,7 @@
 // Get random tweet from @LOUDBOT
 // 
 // Usage:
-// export LOUD_CONFIG=config.js   // relative path to config file
+// export LOUD_CONFIG=config.js   // absolute path to config file
 // loud = require('loudbot');
 // loud();
 // output: GUYS I TRIED TO USE A MULTITHREADED REGEXP TO PARSE HTML BUT IT DIDN'T WORK: HELP???
@@ -19,7 +19,7 @@ var Twit = require('twit');
 var config = null;
 
 if (process.env.LOUD_CONFIG) {
-  config = require('./' + process.env.LOUD_CONFIG);
+  config = require(process.env.LOUD_CONFIG);
 } else {
   throw new Error('LOUD_CONFIG environment variable does\'t exist');
 };
@@ -46,7 +46,7 @@ module.exports = function(cb) {
     };
 
     tweet = reply[index].text.replace(/^@[\S]+ /, '');
-    if (cb) { return cb(null, tweet) };
+    if (cb) { return cb(null, reply) };
     return console.log(tweet);
   });
 };

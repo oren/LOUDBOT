@@ -10,14 +10,14 @@
 ## Example
 
 ```js
-export LOUD_CONFIG=config.js
+export LOUD_CONFIG=/tmp/config.js
 loud = require('loudbot');
 loud();
 
 // Output: GUYS I TRIED TO USE A MULTITHREADED REGEXP TO PARSE HTML BUT IT DIDN'T WORK: HELP???
 ```
 
-`LOUD_CONFIG` is an environment variable with the relative path to the config file. The file should look like:
+`LOUD_CONFIG` is an environment variable with the absolute path to the config file. The file should look like:
 
 ```js
 'use strict';
@@ -49,5 +49,5 @@ var loud = require('loudbot');
 
 ## Test
 
-    export LOUD_CONFIG=config.js
+    export LOUD_CONFIG=/tmp/config.js
     npm test
