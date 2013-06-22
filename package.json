@@ -1,5 +1,5 @@
 {
-  "name": "LOUDBOT",
+  "name": "loudbot",
   "version": "0.0.1",
   "description": "Get random tweet from @LOUDBOT",
   "main": "index.js",
