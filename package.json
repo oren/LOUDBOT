@@ -1,6 +1,6 @@
 {
   "name": "loudbot",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Get random tweet from @LOUDBOT",
   "main": "index.js",
   "directories": {
