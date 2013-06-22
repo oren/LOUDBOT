@@ -1,0 +1,31 @@
+{
+  "name": "LOUDBOT",
+  "version": "0.0.1",
+  "description": "Get random tweet from @LOUDBOT",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "twit": "~1.1.6"
+  },
+  "devDependencies": {
+    "tape": "~1.0.4"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/oren/LOUDBOT.git"
+  },
+  "keywords": [
+    "LOUDBOT",
+    "twitter"
+  ],
+  "author": "Oren",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/oren/LOUDBOT/issues"
+  }
+}
