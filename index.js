@@ -41,6 +41,11 @@ module.exports = function(cb) {
 
   T.get('/statuses/user_timeline', options, function(err, reply) {
     if (err) {
+      if(err.data) {
+        err = JSON.parse(err.data);
+        err = err.errors[0].message;
+      };
+    
       if (cb) { return cb(err); };
       return console.error(err);
     };
