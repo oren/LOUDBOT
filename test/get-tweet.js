@@ -14,6 +14,6 @@ test('get random tweet', function (t) {
       t.fail(err);
     };
 
-    t.ok(tweet);
+    t.ok(tweet && typeof tweet === 'string');
   });
 });

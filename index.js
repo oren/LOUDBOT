@@ -47,7 +47,7 @@ module.exports = function(cb) {
 
     var index = Math.floor(Math.random() * (reply.length - 1));
     tweet = reply[index].text.replace(/^@[\S]+ /, '');
-    if (cb) { return cb(null, reply) };
+    if (cb) { return cb(null, tweet) };
     return console.log(tweet);
   });
 };
