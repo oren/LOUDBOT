@@ -29,16 +29,31 @@ var T = new Twit(config);
 // https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=twitterapi&count=2&trim_user=true
 var options = {
   screen_name: 'loudbot', 
-  count: 50,
+  count: 200,
   trim_user: true,
   exclude_replies: true, 
   include_rts: false
 };
 
-module.exports = function(cb) {
-  var index = 0;
-  var tweet = '';
+var index = 0;
+var tweet = '';
+var replies = [];
 
+// hit twitter only if the cached replies is empty
+module.exports = function(cb) {
+  if (replies.length === 0) {
+    return hitTwitter(cb);  
+  };
+  
+  index = Math.floor(Math.random() * (replies.length - 1));
+  tweet = replies[index].text.replace(/^@[\S]+ /, '');
+  replies.splice(index,1);
+
+  if (cb) { return cb(null, tweet) };
+  return console.log(tweet);
+};
+
+function hitTwitter(cb) {
   T.get('/statuses/user_timeline', options, function(err, reply) {
     if (err) {
       if(err.data) {
@@ -50,8 +65,11 @@ module.exports = function(cb) {
       return console.error(err);
     };
 
-    var index = Math.floor(Math.random() * (reply.length - 1));
+    index = Math.floor(Math.random() * (reply.length - 1));
     tweet = reply[index].text.replace(/^@[\S]+ /, '');
+    reply.splice(index,1);
+    replies = reply;
+
     if (cb) { return cb(null, tweet) };
     return console.log(tweet);
   });
