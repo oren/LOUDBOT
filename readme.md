@@ -1,5 +1,7 @@
 # Get a random tweet from @LOUDBOT
 
+[![NPM](http://nodei.co/npm/loudbot.png)](http://nodei.co/npm/loudbot/)
+
 ## Index
 
 * [Example](#example)
