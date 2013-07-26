@@ -10,6 +10,7 @@ test('get random tweet', function (t) {
   t.plan(1);
 
   loud(function(err, tweet) {
+    console.log(tweet);
     if (err) {
       t.fail(err);
     };

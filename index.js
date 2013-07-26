@@ -28,7 +28,7 @@ var T = new Twit(config);
 
 // https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=twitterapi&count=2&trim_user=true
 var options = {
-  screen_name: 'loudbot', 
+  screen_name: config.screenName || 'loudbot', 
   count: 200,
   trim_user: true,
   exclude_replies: true, 
